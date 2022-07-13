@@ -1,24 +1,26 @@
 #include "main.h"
 
 /**
- * leet - encode
- * @s: pointer to char params
- * Return: *s
+ * leet - transform to leet
+ * @s: char array string type
+ * Return: s transformed
  */
 
 char *leet(char *s)
 {
-	int i;
-	int j;
-	char l[] = "ol_ea_t";
+	int i, ii;
+	char s1[] = "aeotl";
+	char S1[] = "AEOTL";
+	char s2[] = "43071";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; l[j] != '\0'; j++)
+		for (ii = 0; ii < 5; ii++)
 		{
-			if (s[i] == l[j] || s[i] == (l[j] - 32))
+			if (s[i] == s1[ii] || s[i] == S1[ii])
 			{
-				s[i] = j + '0';
+				s[i] = s2[ii];
+				break;
 			}
 		}
 	}
